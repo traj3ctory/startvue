@@ -1,35 +1,96 @@
 <template>
-  <div class="row">
-    <div class="mx-auto col-sm-6" v-for="todo in todos" :key="todo.id">
-      <div class="card mb-3 shadow-sm p-2">
-        <div class="card-header">{{ todo.title }}</div>
-        <div class="card-body">
+  <div class="col-lg-3 col-md-4 col-6 mx-auto">
+    <div class="card mb-3 shadow-sm">
+      <div class="content" v-show="!isEditing">
+        <div class="card-header">
+          {{ todo.title }}
+        </div>
+        <div class="card-body p-2">
           {{ todo.project }}
         </div>
-        <div class="card-footer">
-          <div class="float-right">
-            <i class="fas fa-trash-alt mr-1"></i>
+        <div class="text-right p-1">
+          <span class="text-info btn btn-sm" v-on:click="showForm">
             <i class="fas fa-edit"></i>
-          </div>
+          </span>
+          <span class="text-danger btn btn-sm" v-on:click="deleteTodo(todo)">
+            <i class="fas fa-trash-alt"></i>
+          </span>
+        </div>
+      </div>
 
-          <div align="center" class="mt-4">
-            <button class="btn btn-sm btn-success" v-show="todo.done">
-              <i class="fas fa-check-circle"></i>&nbsp;Completed
-            </button>
-            <button class="btn btn-sm btn-danger" v-show="!todo.done">
-              <i class="fas fa-times"></i>&nbsp;Complete
+      <div class="card">
+        <div class="card-body p-2" v-show="isEditing">
+          <div class="form">
+            <div class="form-group mb-2">
+              <label>Title</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                v-model="todo.title"
+              />
+            </div>
+            <div class="form-group mb-2">
+              <label>Project</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                v-model="todo.project"
+              />
+            </div>
+
+            <button class="btn btn-sm btn-info float-right" v-on:click="hideForm">
+               <i class="fas fa-chevron-left"></i>&ensp;Back
             </button>
           </div>
         </div>
+
+      <div class="card-footer p-1 mx-auto">
+        <button
+          class="btn btn-sm btn-success"
+          v-show="!isEditing && todo.done"
+          disabled
+        >
+          Completed&ensp;<i class="fas fa-check-double"></i>
+        </button>
+        <button
+          class="btn btn-sm btn-outline-warning"
+          v-on:click="completeTodo(todo)"
+          v-show="!isEditing && !todo.done"
+        >
+          Pending&ensp;<i class="fas fa-sync"></i>
+        </button>
       </div>
+
+      
+      </div>
+
     </div>
   </div>
 </template>
 
-<script lang="text/<script">
+<script type="text/javascript">
 export default {
-    props: ['todo'],
-}
+  props: ["todo"],
+  data() {
+    return {
+      isEditing: false,
+    };
+  },
+  methods: {
+    completeTodo(todo) {
+      this.$emit("complete-todo", todo);
+    },
+    deleteTodo(todo) {
+      this.$emit("delete-todo", todo);
+    },
+    showForm() {
+      this.isEditing = true;
+    },
+    hideForm() {
+      this.isEditing = false;
+    },
+  },
+};
 </script>
 
-<style></style>
+<style lang="stylus"></style>
