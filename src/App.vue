@@ -1,19 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div id="app">
+  <div class="container-fluid">
+    <todo-list v-bind:todos="todos"></todo-list>
+  </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoList from "./components/TodoList";
 
 export default {
-  name: 'App',
+  name: "app",
   components: {
-    HelloWorld
-  }
-}
+    TodoList,
+  },
+
+  //data function
+  data() {
+    return {
+      todos: [
+        {
+          title: "Todo A",
+          project: "Project A",
+          done: false,
+        },
+        {
+          title: "Todo B",
+          project: "Project B",
+          done: true,
+        },
+        {
+          title: "Todo C",
+          project: "Project C",
+          done: false,
+        },
+        {
+          title: "Todo D",
+          project: "Project D",
+          done: false,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
@@ -26,3 +55,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+
