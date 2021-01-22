@@ -44,7 +44,7 @@
           </div>
         </div>
 
-      <div class="card-footer p-1 mx-auto">
+      <div class="card-footer p-1 mx-auto border-0">
         <button
           class="btn btn-sm btn-success"
           v-show="!isEditing && todo.done"
@@ -53,7 +53,7 @@
           Completed&ensp;<i class="fas fa-check-double"></i>
         </button>
         <button
-          class="btn btn-sm btn-outline-warning"
+          class="btn btn-sm btn-outline-info"
           v-on:click="completeTodo(todo)"
           v-show="!isEditing && !todo.done"
         >

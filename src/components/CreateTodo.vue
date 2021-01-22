@@ -38,7 +38,7 @@
               >
                 <i class="fas fa-check-circle"></i>&ensp;Create
               </button>
-              <button class="btn btn-sm btn-danger ml-1 active" v-on:click="closeForm">
+              <button class="btn btn-sm btn-danger ml-1" v-on:click="closeForm">
                 Cancel&ensp;<i class="fas fa-times-circle"></i>
               </button>
             </div>

@@ -17,7 +17,7 @@
       }}
     </p>
 
-    <div class="container">
+    <div class="container mt-5">
       <div class="row">
         <todo
           v-on:delete-todo="deleteTodo"
@@ -70,5 +70,7 @@ export default {
 <style scoped>
 p.tasks {
   text-align: center;
+  color: #ffffff;
+  font-weight: 500;
 }
 </style>
