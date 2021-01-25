@@ -1,6 +1,6 @@
 <template>
-  <div :if="users" class="bg-light shadow-sm p-4 my-3">
-    <div v-for="{user, index} in users" :key="index">{{ user.package.description }}</div>
+  <div class="bg-light shadow-sm p-4 my-3">
+    <div class="mb-3 border-bottom" v-for="user in users" :key="user.id">{{ user.package.name }}</div>
   </div>
   <!-- <div class="text-info p-5">Hello</div> -->
 </template>
@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: 'list',
   //State
   data() {
     return {
@@ -38,6 +39,7 @@ export default {
   },
   mounted() {
     console.log("mounted");
+    this.getUsers();
   },
   updated() {
     console.log("updated");

@@ -67,15 +67,6 @@ export default {
   width: 100vw;
 }
 
-.contain {
-  background-color: #1a202c !important;
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  width: 100vw;
-  justify-content: center;
-}
-
 .btn-info,
 .bg-info {
   background-color: var(--info) !important;

@@ -51,6 +51,8 @@ let users = [
 ];
 
 export default {
+  name: 'hello',
+  
   data() {  
     return {
       users: users,
