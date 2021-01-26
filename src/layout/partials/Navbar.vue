@@ -16,6 +16,7 @@
         <router-link tag="li" to="/form" class="nav-link"> form </router-link>
         <router-link tag="li" to="/todo" class="nav-link"> Todo </router-link>
         <router-link tag="li" to="/start" class="nav-link"> Start </router-link>
+        <router-link tag="li" to="/quiz" class="nav-link"> Quiz </router-link>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

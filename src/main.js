@@ -16,6 +16,7 @@ import form from './pages/Form.vue'
 import hello from './pages/Hello.vue'
 import todo from './pages/TodoPage.vue'
 import start from './pages/Start.vue'
+import quiz from './pages/Question.vue'
 
 const routes = [
   {
@@ -37,6 +38,10 @@ const routes = [
   {
     path: "/start",
     component: start,
+  },
+  {
+    path: "/quiz",
+    component: quiz,
   },
 ];
 
