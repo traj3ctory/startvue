@@ -1,10 +1,24 @@
 <template>
-    <h1 class="text-white">Hello</h1>
+  <div class="mt-4">
+    <b-jumbotron>
+
+      <template #lead>
+        This is a simple hero unit, a simple jumbotron-style component for
+        calling extra attention to featured content or information.
+      </template>
+
+      <hr class="my-4" />
+
+      <p>
+        It uses utility classes for typography and spacing to space content out
+        within the larger container.
+      </p>
+    </b-jumbotron>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: "body",
+  name: "question",
 };
 </script>
