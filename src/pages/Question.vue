@@ -4,7 +4,7 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col sm="6" class="mx-auto">
-          <Body :question="questions[index]"/>
+          <Body :currentQuestion="questions[index]" />
         </b-col>
       </b-row>
     </b-container>
@@ -16,26 +16,32 @@ import Header from "./Qheader";
 import Body from "./Qbody";
 
 export default {
-  name: "question",
+  name: "quiz",
   components: {
     Header,
     Body,
   },
   data() {
     return {
-      questions: [],
-    }
+      questions: null,
+      index: 0,
+    };
   },
-  mounted: () => {
-    fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple',{
-      method: 'GET'
-    })
-    .then((response) => {
-      return response.json()
-    })
-    .then((jsonData) => {
-      this.questions = jsonData.results
-    })
-  }
+  methods: {
+    getQuestion: async function () {
+      const resp = await fetch(
+        "https://opentdb.com/api.php?amount=10&category=18&type=multiple",
+        {
+          method: "GET",
+        }
+      );
+      const jsonData = await resp.json();
+      this.questions = jsonData.results;
+      console.log(this.questions)
+    },
+  },
+  mounted() {
+    this.getQuestion();
+  },
 };
 </script>

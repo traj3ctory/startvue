@@ -3,8 +3,7 @@
     <b-jumbotron>
 
       <template #lead>
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
+        {{ currentQuestion.question}}
       </template>
 
       <hr class="my-4" />
@@ -20,5 +19,8 @@
 <script>
 export default {
   name: "question",
+  props:{
+    currentQuestion: Object,
+  }
 };
 </script>

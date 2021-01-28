@@ -7,7 +7,7 @@
 
       <b-collapse id="nav-text-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-text>Navbar text</b-nav-text>
+          <b-nav-text>counter 4/10</b-nav-text>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -16,6 +16,6 @@
 
 <script>
 export default {
-  name: "nav",
+  name: "navigation",
 };
 </script>
