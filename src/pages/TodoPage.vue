@@ -56,7 +56,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 :root {
   --info: linear-gradient(60deg, #26c6da, #00acc1);
   --error: linear-gradient(60deg, #ef5350, #e53935);

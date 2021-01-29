@@ -4,7 +4,7 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col sm="6" class="mx-auto">
-          <Body :currentQuestion="questions[index]" />
+          <Body v-if="questions.length" :currentQuestion="questions[index]" :next="next" />
         </b-col>
       </b-row>
     </b-container>
@@ -37,7 +37,11 @@ export default {
       );
       const jsonData = await resp.json();
       this.questions = jsonData.results;
-      console.log(this.questions)
+      console.log(this.questions);
+    },
+
+    next() {
+      this.index++;
     },
   },
   mounted() {
