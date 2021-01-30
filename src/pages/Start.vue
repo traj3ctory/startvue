@@ -18,9 +18,10 @@
   </div>
 </template>
 
-<script>
+<script> 
 export default {
   name: "start",
+  
   data() {
     return {
       data: {

@@ -1,10 +1,15 @@
 <template>
   <div>
-    <Header />
+    <Header :numCorrect="numCorrect" :numTotal="numTotal" />
     <b-container class="bv-example-row">
       <b-row>
         <b-col sm="6" class="mx-auto">
-          <Body v-if="questions.length" :currentQuestion="questions[index]" :next="next" />
+          <Body
+            v-if="questions.length"
+            :currentQuestion="questions[index]"
+            :next="next"
+            :increment="increment"
+          />
         </b-col>
       </b-row>
     </b-container>
@@ -23,11 +28,22 @@ export default {
   },
   data() {
     return {
-      questions: null,
+      questions: [],
       index: 0,
+      numCorrect: 0,
+      numTotal: 0,
     };
   },
   methods: {
+    next() {
+      this.index++;
+    },
+    increment(isCorrect) {
+      if (isCorrect) {
+        this.numCorrect++;
+      }
+      this.numTotal++;
+    },
     getQuestion: async function () {
       const resp = await fetch(
         "https://opentdb.com/api.php?amount=10&category=18&type=multiple",
@@ -38,10 +54,6 @@ export default {
       const jsonData = await resp.json();
       this.questions = jsonData.results;
       console.log(this.questions);
-    },
-
-    next() {
-      this.index++;
     },
   },
   mounted() {
