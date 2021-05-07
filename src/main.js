@@ -17,6 +17,7 @@ import hello from './pages/Hello.vue'
 import todo from './pages/TodoPage.vue'
 import start from './pages/Start.vue'
 import quiz from './pages/Question.vue'
+import learn from './pages/Learn.vue'
 
 const routes = [
   {
@@ -42,6 +43,10 @@ const routes = [
   {
     path: "/quiz",
     component: quiz,
+  },
+  {
+    path: "/learn",
+    component: learn,
   },
 ];
 

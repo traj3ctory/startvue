@@ -20,10 +20,7 @@ export default {
 <style>
 .contain {
   background-color: #1a202c !important;
+  color:white;
   min-height: 100vh;
-  /* display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;*/
 } 
 </style>

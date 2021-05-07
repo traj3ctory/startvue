@@ -15,7 +15,8 @@ export default {
   data() {
     return {
       data: {
-        users: null, // create the variable so Vue knows it exists
+        users: [],
+        totalVuePackages: [], // create the variable so Vue knows it exists
       },
     };
   },
@@ -29,7 +30,8 @@ export default {
       const data = await response.json();
       this.totalVuePackages = data.total;
       this.users = data.results;
-      console.log(this.users)
+      console.log(this.users);
+      console.log(this.totalVuePackages);
     },
   },
 
