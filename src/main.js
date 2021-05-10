@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueRouter from "vue-router";
+import router from "./router";
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 // import route from './routes'
@@ -9,49 +9,14 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
-Vue.use(VueRouter);
+// Vue.use(VueRouter);
 
-import list from './pages/List.vue'
-import form from './pages/Form.vue'
-import hello from './pages/Hello.vue'
-import todo from './pages/TodoPage.vue'
-import start from './pages/Start.vue'
-import quiz from './pages/Question.vue'
+// const router = new VueRouter({
+//   routes,
+//   mode: "history",
+// });
 
-const routes = [
-  {
-    path: "",
-    component: hello,
-  },
-  {
-    path: "/form",
-    component: form,
-  },
-  {
-    path: "/list",
-    component: list,
-  },
-  {
-    path: "/todo",
-    component: todo,
-  },
-  {
-    path: "/start",
-    component: start,
-  },
-  {
-    path: "/quiz",
-    component: quiz,
-  },
-];
-
-
-const router = new VueRouter({
-  routes,
-  mode: "history",
-});
-
-Vue.config.productionTip = false;
+// Vue.config.productionTip = false;
 
 new Vue({
   router,
