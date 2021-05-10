@@ -1,6 +1,6 @@
 <template>
   <div class="mt-4">
-    <div class="row text-black">
+    <div v-if="users" class="row text-black">
       <div class="col-md-3" v-for="user in users" :key="user.id">
         <div class="card mb-3">
           <div class="card-header text-center">
@@ -16,6 +16,7 @@
         </div>
       </div>
     </div>
+    <div v-else>hello world</div>
   </div>
 </template>
     
@@ -51,7 +52,7 @@ let users = [
 ];
 
 export default {
-  name: 'hello',
+  name: 'home',
   
   data() {  
     return {

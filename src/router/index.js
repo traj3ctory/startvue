@@ -4,10 +4,11 @@ import Router from "vue-router";
 Vue.use(Router);
 
 export default new Router({
+    mode: 'history',
     routes: [
         {
-            name: "",
-            path: "/home",
+            name: "home",
+            path: "/",
             component: () => import("@/views/Home"),
         },
         {
@@ -26,14 +27,19 @@ export default new Router({
             component: () => import("@/views/TodoPage"),
         },
         {
-            name: "question",
-            path: "/question",
+            name: "quiz",
+            path: "/quiz",
             component: () => import("@/views/Question"),
         },
         {
             name: "start",
             path: "/start",
             component: () => import("@/views/Start"),
+        },
+        {
+            name: "NotFound",
+            path: "*",
+            component: () => import("@/views/404"),
         }
     ]
 })

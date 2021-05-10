@@ -12,28 +12,28 @@
       + Add
     </button>
     <hr />
-    <ul>
-      <li v-for="cat in cats" :key="cat.name" class="text-white">{{ cat.name }}</li>
+    <ul v-if="cats">
+      <li v-for="cat in cats" :key="cat.name" class="text-white">
+        {{ cat.name }}
+      </li>
     </ul>
+    <div v-if="!cats">No cat available</div>
   </div>
 </template>
 
-<script> 
+<script>
 export default {
   name: "start",
-  
   data() {
     return {
-      data: {
-        cats: [{ name: "kittyKat" }, { name: "fish" }, { name: "kart" }],
-        newCat: "",
-      },
+      cats: [{ name: "kittyKat" }, { name: "fish" }, { name: "kart" }],
+      newCat: "",
     };
   },
   methods: {
     addKitty: function () {
       this.cats.push({ name: this.newCat });
-      console.log(this.cats)
+      console.log(this.cats);
       this.newCat = "";
     },
   },

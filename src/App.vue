@@ -1,16 +1,16 @@
 <template>
-  <div id="app" class="container-fluid contain">
+  <div id="app" class="contain">
     <layout class="mb-4"/>
-    <router-view />
+    <div class="container">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-
 import layout from './layout'
 export default {
   name: 'App',
-  //data function
   components: {
     layout,
   }
@@ -21,9 +21,6 @@ export default {
 .contain {
   background-color: #1a202c !important;
   min-height: 100vh;
-  /* display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;*/
+  padding-bottom: 1rem;
 } 
 </style>

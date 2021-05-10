@@ -1,22 +1,53 @@
 <template>
-  <div class="bg-light shadow-sm p-4 my-3">
-    <div class="mb-3 border-bottom" v-for="user in users" :key="user.id">{{ user.package.name }}</div>
+  <div>
+    <!-- Loader -->
+    <div v-if="loading" class="loader">
+      <div class="spinner-border text-light" role="status"></div>
+    </div>
+
+    <!-- Display Topics -->
+    <div v-if="topics">
+      <div
+        class="mb-3 border-bottom card shadow-sm"
+        v-for="topic in topics"
+        :key="topic.searchScore"
+      >
+        <div class="card-header">{{ topic.package.name }}</div>
+        <div class="card-body">{{ topic.package.description }}</div>
+      </div>
+    </div>
+
+    <!-- Display if not topic -->
+    <div v-else>
+      <div class="card card-body text-center">
+        <h4>No Post</h4>
+      </div>
+    </div>
   </div>
-  <!-- <div class="text-info p-5">Hello</div> -->
 </template>
 
-<style>
+<style scoped>
+.loader {
+  min-height: 100vh;
+  min-width: 100%;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
 
 <script>
 export default {
-  name: 'list',
+  name: "list",
   //State
   data() {
     return {
-      data: {
-        users: null, // create the variable so Vue knows it exists
-      },
+      loading: false,
+      posts: [],
+      // topics: [],
+      total: "",
     };
   },
 
@@ -24,22 +55,32 @@ export default {
   methods: {
     getUsers: async function () {
       // go get the users using an HTTP call
+      this.loading = true;
+      try {
+        const response = await fetch("https://api.npms.io/v2/search?q=vue");
+        let data = await response.json();
+        this.topics = data.results;
+        this.total = data.total;
 
-      const response = await fetch("https://api.npms.io/v2/search?q=vue");
-      const data = await response.json();
-      this.totalVuePackages = data.total;
-      this.users = data.results;
-      console.log(this.users)
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+        let posts = await res.json();
+        this.posts = posts;
+      } catch (e) {
+        console.log(e.message);
+      }
+      this.loading = false;
     },
   },
 
   // when our Vue app is created, go get the list of users
   async created() {
     this.getUsers();
+    console.log(this.posts);
   },
   mounted() {
-    console.log("mounted");
-    this.getUsers();
+    // console.log("mounted");
+    // console.log(this.posts)
+    // this.getUsers();
   },
   updated() {
     console.log("updated");
