@@ -29,7 +29,7 @@
 <style scoped>
 .loader {
   min-height: 100vh;
-  min-width: 100%;
+  min-width: 89%;
   position: fixed;
   z-index: 10;
   display: flex;
@@ -46,7 +46,7 @@ export default {
     return {
       loading: false,
       posts: [],
-      // topics: [],
+      topics: [],
       total: "",
     };
   },
@@ -54,7 +54,6 @@ export default {
   //Function
   methods: {
     getUsers: async function () {
-      // go get the users using an HTTP call
       this.loading = true;
       try {
         const response = await fetch("https://api.npms.io/v2/search?q=vue");
@@ -78,9 +77,7 @@ export default {
     console.log(this.posts);
   },
   mounted() {
-    // console.log("mounted");
-    // console.log(this.posts)
-    // this.getUsers();
+    console.log("mounted");
   },
   updated() {
     console.log("updated");

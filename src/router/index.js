@@ -27,6 +27,21 @@ export default new Router({
             component: () => import("@/views/TodoPage"),
         },
         {
+            name: "login",
+            path: "/login",
+            component: () => import("@/views/auth/Login"),
+        },
+        {
+            name: "registration",
+            path: "/registration",
+            component: () => import("@/views/auth/Registration"),
+        },
+        {
+            name: "forgot",
+            path: "/forgot",
+            component: () => import("@/views/auth/Forgot"),
+        },
+        {
             name: "quiz",
             path: "/quiz",
             component: () => import("@/views/Question"),

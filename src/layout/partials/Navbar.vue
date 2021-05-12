@@ -11,20 +11,66 @@
 
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
-        <router-link tag="li" to="/" class="nav-link"> Home </router-link>
-        <router-link tag="li" to="/list" class="nav-link"> List </router-link>
-        <router-link tag="li" to="/form" class="nav-link"> form </router-link>
-        <router-link tag="li" to="/todo" class="nav-link"> Todo </router-link>
-        <router-link tag="li" to="/start" class="nav-link"> Start </router-link>
-        <router-link tag="li" to="/quiz" class="nav-link"> Quiz </router-link>
+        <router-link
+          v-for="route in routes"
+          :key="route.name"
+          tag="li"
+          :to="route.path"
+          class="nav-link"
+        >
+          {{ route.name }}
+        </router-link>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
 
 <script>
+let routes = [
+  {
+    path: "/",
+    name: "Home",
+  },
+  {
+    path: "/list",
+    name: "List",
+  },
+  {
+    path: "/form",
+    name: "Form",
+  },
+  {
+    path: "/todo",
+    name: "Todo",
+  },
+  {
+    path: "/start",
+    name: "Start",
+  },
+  {
+    path: "/quiz",
+    name: "Quiz",
+  },
+  {
+    path: "/login",
+    name: "Login",
+  },
+  {
+    path: "/forgot",
+    name: "Forgot",
+  },
+  {
+    path: "/registration",
+    name: "Registration",
+  },
+];
 export default {
   name: "navheader",
+  data() {
+    return {
+      routes: routes,
+    };
+  },
 };
 </script>
 

@@ -61,7 +61,7 @@
       return {
         form: {
           email: '',
-          name: '',
+          password: '',
           food: null,
           checked: []
         },
