@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="contain">
-    <layout class="mb-4"/>
+    <layout class="mb-4" />
     <div class="container">
       <router-view />
     </div>
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import layout from './layout'
+import layout from "./layout";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     layout,
-  }
+  },
 };
 </script>
 
@@ -22,5 +22,5 @@ export default {
   background-color: #1a202c !important;
   min-height: 100vh;
   padding-bottom: 1rem;
-} 
+}
 </style>
