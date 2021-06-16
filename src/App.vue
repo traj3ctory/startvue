@@ -16,11 +16,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.contain {
-  background-color: #1a202c !important;
-  min-height: 100vh;
-  padding-bottom: 1rem;
-}
-</style>

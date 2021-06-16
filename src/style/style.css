@@ -1,0 +1,19 @@
+
+div.contain {
+    background-color: #eee !important;
+    min-height: 100vh;
+    padding-bottom: 1rem;
+  }
+  div.nav-link {
+    display: inline-block;
+    padding: 0.35rem;
+    text-decoration: underline;
+  }
+  div.bg-default {
+    background-color: #1a202c;
+    color: #ffffff;
+  }
+input.form-control:active, input.form-control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgb(0 123 255 / 25%);
+  }

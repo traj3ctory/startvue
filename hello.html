@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Getting Started with JavaScript</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    body { padding: 30px; }
+  </style>
+</head>
+<body>
+
+  <div class="dogs-list"></div>
+
+  <!-- 🔥🔥🔥🔥 start javascript 🔥🔥🔥🔥 -->
+  <script>
+
+
+    // for loop
+    const dogsList = document.querySelector('.dogs-list');
+    const dogs = [
+      { name: 'bruce', type: 'chihuahua' },
+      { name: 'chance', type: 'bernese' },
+      { name: 'bingo', type: 'sheperd' },
+    ];
+
+    for (let dog of dogs) {
+    //   const dogData     = document.createElement('div');
+    //   dogData.classList.add('jumbotron', 'text-center');
+    //   dogData.innerText = `${dog.name} is a ${dog.type}`;
+    //   dogsList.appendChild(dogData);
+
+      dogsList.innerHTML += `<div class="jumbotron text-center">${dog.name} is a ${dog.type}</div>`;
+    //   dogsList.innerHTML += '<div class="jumbotron text-center">' + dog.name + 'is a' + dog.type + "</div>";
+    }
+
+  </script>
+</body>
+</html>

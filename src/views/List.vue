@@ -2,7 +2,7 @@
   <div>
     <!-- Loader -->
     <div v-if="loading" class="loader">
-      <div class="spinner-border text-light" role="status"></div>
+      <div class="spinner-border text-dark" role="status"></div>
     </div>
 
     <!-- Display Topics -->
