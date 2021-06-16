@@ -1,20 +1,20 @@
 <template>
   <main class="container-lg">
-    <form action="" id="login" @submit="handleClick">
+    <form action="" id="registration" @submit="handleClick">
       <div class="card">
         <div class="card-header py-2 bg-info">
           <h4 class="h4 text-center text-white">Login</h4>
         </div>
         <div class="card-body">
           <div class="row">
-               <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3">
               <div class="form-floating">
                 <input
                   type="text"
                   class="form-control"
                   id="firstname"
                   name="firstname"
-                   v-model="form.firstname"
+                  v-model="form.firstname"
                   autocomplete="given-name"
                   placeholder="firstname"
                 />
@@ -44,7 +44,7 @@
                   class="form-control"
                   id="username"
                   name="username"
-                   v-model="form.username"
+                  v-model="form.username"
                   autocomplete="username"
                   placeholder="username"
                 />
@@ -125,8 +125,12 @@
             </div>
 
             <div class="w-100 my-3 text-center">
-              <button type="reset" class="btn btn-danger mx-1"><i class="fa fa-trash"></i>&nbsp;Reset</button>
-              <button type="submit" class="btn btn-primary mx-1">Submit&nbsp;<i class="fa fa-folder-open"></i></button>
+              <button type="reset" class="btn btn-danger mx-1">
+                <i class="fa fa-trash"></i>&nbsp;Reset
+              </button>
+              <button type="submit" class="btn btn-primary mx-1">
+                Submit&nbsp;<i class="fa fa-folder-open"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -154,12 +158,14 @@ export default {
     };
   },
   methods: {
-       handleClick(event) {
-        event.preventDefault()
-        this.form.password === this.form.cpassword ? console.log('hello') : console.log('hi');
-        // alert(JSON.stringify(this.form))
-      },
-  }
+    handleClick(event) {
+      event.preventDefault();
+      this.form.password === this.form.cpassword
+        ? console.log("hello")
+        : console.log("hi");
+      // alert(JSON.stringify(this.form))
+    },
+  },
 };
 </script>
 

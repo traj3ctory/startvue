@@ -21,6 +21,7 @@ export default {
 .contain {
   background-color: #1a202c !important;
   min-height: 100vh;
-  padding-bottom: 1rem;
+  padding: .5rem 1rem;
+
 }
 </style>

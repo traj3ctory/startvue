@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from "./router";
-import Vuex from 'vuex'
+// import Vuex from 'vuex'
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
@@ -11,7 +11,7 @@ import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
-Vue.use(Vuex)
+// Vue.use(Vuex)
 
 // Vue.config.productionTip = false;
 

@@ -56,8 +56,12 @@ let routes = [
     name: "Login",
   },
   {
-    path: "/forgot",
-    name: "Forgot",
+    path: "/contact",
+    name: "Contact",
+  },
+    {
+    path: "/userlist",
+    name: "UserList",
   },
   {
     path: "/registration",
