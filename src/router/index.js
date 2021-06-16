@@ -37,9 +37,14 @@ export default new Router({
             component: () => import("@/views/auth/Registration"),
         },
         {
-            name: "forgot",
-            path: "/forgot",
-            component: () => import("@/views/auth/Forgot"),
+            name: "contact",
+            path: "/contact",
+            component: () => import("@/views/auth/Contact"),
+        },
+        {
+            name: "userlist",
+            path: "/userlist",
+            component: () => import("@/views/UserList"),
         },
         {
             name: "quiz",

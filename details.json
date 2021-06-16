@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 73697,
+      "user": {
+        "firstname": "David",
+        "lastname": "Benard",
+        "username": "davidbenard.bd@gmail.com ",
+        "state": "state",
+        "terms": true
+      }
+    }
+  ]
+}
